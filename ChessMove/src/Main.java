@@ -108,6 +108,7 @@ public class Main {
                 }
                 break;
             case "Knight":
+                System.out.println("Entre en caballo");
                 if(movieKnight()){
                     System.out.println("True");
                 }else{
@@ -210,19 +211,30 @@ public class Main {
     }
 
     public static boolean movieKing() {
+
         String[] parts = positionInitial.split("|");
         String letterInitial = parts[0];
+        int numberInitial = Integer.parseInt(parts[1]);
 
         String[] partsTwo = positionTarget.split("|");
         String letterTarget = partsTwo[0];
+        int numberTarget = Integer.parseInt(partsTwo[1]);
 
         int positionStart = positionOfTheLetter(letterInitial);
         int positionFinal = positionOfTheLetter(letterTarget);
 
+        int movieFinallyBack = numberInitial + 1;
+        int movieFinallyBack2 = numberInitial - 1;
+
         if(letters[positionStart - 1] == letters[positionFinal]){
+            if(movieFinallyBack2 == numberTarget){
+                return true;
+            }
             return true;
         } else if (letters[positionStart + 1] == letters[positionFinal]) {
-            return true;
+            if(movieFinallyBack == numberTarget){
+                return true;
+            }
         }
 
         return false;
