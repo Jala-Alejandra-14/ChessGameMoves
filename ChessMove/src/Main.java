@@ -21,22 +21,6 @@ public class Main {
     public static String positionTarget;
 
     public static void main(String[] args) {
-        try {
-            String inPut = args[0];
-            String[] firstInPut = inPut.split("=");
-            String pieze = firstInPut[1];
-
-            inPut = args[1];
-            String[] secondInPut = inPut.split("=");
-            String length = secondInPut[1];
-
-            inPut = args[2];
-            String[] thirdInPut = inPut.split("=");
-            String numberOfGenerations = thirdInPut[1];
-
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Incorrect and/or insufficient values");
-        }
         showChessBoard();
         chessPiece ();
         initialPosition ();
